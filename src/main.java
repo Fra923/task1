@@ -29,7 +29,7 @@ public class main {
         String line = reader.readLine();
         while(line!=null){
             if(line.equals("=")) break;
-            Pattern pattern = Pattern.compile("(\\d+)[\\s]?([-+*/])[\\s]?(\\d+)");
+            Pattern pattern = Pattern.compile("^(\\d+)[\\s]?([-+*/])[\\s]?(\\d+)$");
             Matcher matcher = pattern.matcher(line);
             if(matcher.find()){
                 result = result+calculator(Double.parseDouble(matcher.group(1)),Double.parseDouble(matcher.group(3)),matcher.group(2), line);
